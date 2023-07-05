@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <title>Day</title>
+</head>
+<body>
+    <div class="box" id="heading">
+        <h1><%= kindOfDay %></h1>
+    </div>
+    
+    <div class="box" >
+        <p style="color: #53b6e1;"><b>Add items:</b></p>
+              
+        <% for(var i=0; i<newListitems.length ; i++){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= newListitems[i] %></p>
+            </div>
+            
+        <% } %>
+        <form class="item" action="/" method="post">
+            <input type="text" name="newitem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="button">+</button>
+        </form>
+    </div>
+       
+</ul>
+</body>
+</html>
