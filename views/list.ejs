@@ -17,13 +17,14 @@
     <div class="box" >
         <p style="color: #53b6e1;"><b>Add items:</b></p>
               
-        <% for(var i=0; i<newListitems.length ; i++){ %>
+           <% newListItems.forEach(function(newitem){ %>
+            <form action="/delete" method="post">
             <div class="item">
-                <input type="checkbox">
-                <p><%= newListitems[i] %></p>
+                <input type="checkbox" name="checkbox" value="<%=newitem._id %>" onChange="this.form.submit()">
+                <p><%= newitem.name %></p>
             </div>
-            
-        <% } %>
+        </form>
+        <% } ); %>
         <form class="item" action="/" method="post">
             <input type="text" name="newitem" placeholder="New Item" autocomplete="off">
             <button type="submit" name="button">+</button>
